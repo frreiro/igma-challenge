@@ -1,6 +1,4 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { CPF } from '../../src/validators/cpf/cpf.validator';
-import { FakeUser } from '../factory/user.factory';
 import { UsersRepository } from '../../src/users/repository/users.repository';
 import { UsersService } from '../../src/users/service/users.service';
 import { faker } from '@faker-js/faker';

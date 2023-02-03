@@ -23,4 +23,11 @@ describe('AppController', () => {
       .expect(200)
       .expect('OK');
   });
+
+  it('/users (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/health')
+      .expect(200)
+      .expect('OK');
+  });
 });
