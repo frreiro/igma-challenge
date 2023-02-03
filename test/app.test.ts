@@ -1,6 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
+
 import { AppModule } from '../src/app.module';
 
 describe('AppController', () => {
@@ -16,10 +17,10 @@ describe('AppController', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/health check (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/health')
       .expect(200)
-      .expect('Hello World!');
+      .expect('OK');
   });
 });

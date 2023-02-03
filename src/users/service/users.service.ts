@@ -3,7 +3,7 @@ import {
   HttpStatus,
   Injectable
 } from '@nestjs/common';
-import { CPF } from 'src/validators/cpf/cpf.validator';
+import { CPF } from '../../../src/validators/cpf/cpf.validator';
 import { CreateUserDto } from '../dto/create-user.dto';
 import { User } from '../entities/user.entity';
 import { User as UserPrisma } from '@prisma/client';
@@ -14,7 +14,7 @@ import { UsersRepository } from '../repository/users.repository';
 export class UsersService {
   constructor(private userRepository: UsersRepository) {}
 
-  async create(createUserDto: CreateUserDto): Promise<void> {
+  async create(createUserDto: CreateUserDto): Promise<UserPrisma> {
     const date = new Date(createUserDto.birthday);
     const cpf = new CPF(createUserDto.cpf);
 
@@ -38,7 +38,7 @@ export class UsersService {
       throw new HttpException('Conflict', HttpStatus.CONFLICT);
     }
 
-    await this.userRepository.insert({
+    return await this.userRepository.insert({
       name: user.getName(),
       birthday: user.getBirthday(),
       cpf: user.getCPF()
