@@ -1,0 +1,25 @@
+services:
+  igma-challenge-db:
+    container_name: img-challenge-db
+    image: postgres:13-alpine
+    restart: always
+    env_file:
+      - .env.docker
+    ports: 
+      - 5433:5432
+    volumes:
+    - postgres:/var/lib/postgresql/data
+
+  igma-chigma-challenge-dballenge-application: 
+    container_name: igma-challenge-application
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '${PORT}:${PORT}'
+    env_file:
+      - .env.docker
+    depends_on:
+      - igma-challenge-db
+volumes:
+  postgres:

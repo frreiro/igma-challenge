@@ -11,6 +11,7 @@ import { UsersRepository } from '../repository/users.repository';
 export class UsersService {
   constructor(private userRepository: UsersRepository) {}
 
+  //TODO: criar a validação do CPF
   async create(createUserDto: CreateUserDto): Promise<void> {
     const date = new Date(createUserDto.birthday);
     const user = new User({
@@ -33,7 +34,8 @@ export class UsersService {
     } else {
       pageNumber = page;
     }
-    return await this.userRepository.findAll(pageNumber);
+    const users = await this.userRepository.findAll(pageNumber);
+    return users;
   }
 
   async findByCpf(cpf: string): Promise<User> {
