@@ -5,7 +5,8 @@ import {
   Body,
   Patch,
   Param,
-  Delete
+  Delete,
+  Query
 } from '@nestjs/common';
 import { UsersService } from '../service/users.service';
 import { CreateUserDto } from '../dto/create-user.dto';
@@ -20,8 +21,8 @@ export class UsersController {
   }
 
   @Get()
-  findAll() {
-    return this.usersService.findAll();
+  findAll(@Query('page') page?: number) {
+    return this.usersService.findAll(page);
   }
 
   @Get(':cpf')

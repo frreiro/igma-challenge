@@ -13,9 +13,11 @@ export class UsersRepository implements IUserRepository {
     });
   }
 
-  async findAll(): Promise<User[]> {
-    const users = await this.prisma.user.findMany();
-    return users;
+  async findAll(page: number): Promise<User[]> {
+    return await this.prisma.user.findMany({
+      skip: (page - 1) * 5,
+      take: 5
+    });
   }
 
   async findByCpf(cpf: string): Promise<User> {
