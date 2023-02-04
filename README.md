@@ -22,7 +22,7 @@ Each user has the following data structure.
 - [Node.js](https://nodejs.org/en/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/)
-- [eslint](https://eslint.org/)
+- [Eslint](https://eslint.org/)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Prisma ORM](https://www.prisma.io/)
