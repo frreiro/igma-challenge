@@ -70,6 +70,7 @@ $ npm run start:dev
 #or
 $ yarn run start:dev
 ```
+Make a request for `http://localhost:<PORT>/<ROUTE>`, `PORT` was defined by you in `.env` and `ROUTE` see [below](#🔀-routes) for more informations 
 
 ### Docker mode
 
@@ -81,6 +82,7 @@ $ npm run docker:up
 $ yarn run docker:up
 ```
 
+Make a request for `http://localhost:<PORT>/<ROUTE>`, `PORT` was defined by you in `.env` and `ROUTE` see [below](#🔀-routes) for more informations 
 ### Tests mode
 
 To run the tests of the project in docker, create a `.env.test` file based on the `.env.test.example` file and run the following command:
@@ -90,8 +92,6 @@ $ npm run docker:up:test
 #or
 $ yarn run docker:up:test
 ```
-
-
 
 ## 📌 Features
 
