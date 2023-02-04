@@ -4,7 +4,7 @@ services:
     image: postgres:13-alpine
     restart: always
     env_file:
-      - .env.docker
+      - .env.test
     ports: 
       - 5433:5432
     volumes:
@@ -18,7 +18,7 @@ services:
     ports:
       - '${PORT}:${PORT}'
     env_file:
-      - .env.docker
+      - .env.test
     depends_on:
       - igma-challenge-db
 volumes:
