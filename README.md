@@ -35,6 +35,8 @@ Each user has the following data structure.
 This project is deployed on [Render](https://render.com/) clound, and can be connected and tested using the following link: 
 `https://igma-challenge.onrender.com`
 
+Disclaimer: The first request is a little longer than others. It happen because the server automatically spun down after 15 minutes of inactivity, and then the first request "wakes up" the server.  See more information [here](https://render.com/docs/free)
+
 
 In case you want to install and test the application locally follow the next steps
 
