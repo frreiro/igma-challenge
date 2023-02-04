@@ -1,73 +1,185 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+<div align="center" >
+  <img width="150px" src="" alt="igma-logo" width="400">
+  <br>
+  <br>
+  <h1>IGMA - Challenge</h1>
+</div>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## 📝 Description
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+This challenge consists in create an REST API to create and retrieve Users.
+Each user has the following data structure.
 
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
-
-```bash
-$ npm install
+```js
+	- name
+	- cpf
+	- birthday
 ```
 
-## Running the app
+## 🚀 Technologies
+
+- [Nest.js](https://nestjs.com/)
+- [Node.js](https://nodejs.org/en/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Express](https://expressjs.com/)
+- [eslint](https://eslint.org/)
+- [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+- [Prisma ORM](https://www.prisma.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+## 📦 Installation
+
+Clone the repository.
 
 ```bash
-# development
-$ npm run start
+# https
+$ git clone https://github.com/frreiro/igma-challenge
+# ssh
+$ git clone git@github.com:frreiro/igma-challenge.git
+```
 
-# watch mode
+Install the dependencies.
+
+```bash
+$ cd igma-challenge && npm install
+#or
+$ cd igma-challenge &&  yarn
+```
+
+## 🚀 Usage
+
+This project required three enviroments files
+ - .env
+ - .env.docker
+ - .env.test
+
+To create those enviroments, just follow the instructions in the following files:
+
+- .env.example
+- .env.docker.example
+- .env.test.example
+
+
+### Development mode
+
+To run the project in development mode, create a `.env` file based on the `.env.example` file and run the following command:
+
+```bash
 $ npm run start:dev
-
-# production mode
-$ npm run start:prod
+#or
+$ yarn run start:dev
 ```
 
-## Test
+### Docker mode
+
+To run the project in docker mode, create a `.env.docker` file based on the `.env.docker.example` file and run the following command:
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+$ npm run docker:up
+#or
+$ yarn run docker:up
 ```
 
-## Support
+### Tests mode
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+To run the tests of the project in docker, create a `.env.test` file based on the `.env.test.example` file and run the following command:
 
-## Stay in touch
+```bash
+$ npm run docker:up:test
+#or
+$ yarn run docker:up:test
+```
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
-## License
 
-Nest is [MIT licensed](LICENSE).
+## 📌 Features
+
+- [x] Create user
+- [x] Read all users
+- [x] Read all users by `page`
+- [x] Read users by `cpf`
+
+## 🔀 Routes
+
+- **POST** `/users` - Create a new User
+	
+  - headers: default
+  - body:
+	```json
+	{
+		"name": "yourname",
+		"cpf": "XXXXXXXXXDD",
+		"birthday": "YYYY-MM-DDTHH:mm:ss",
+	}
+	```
+
+	Thoses three types of body cpf property are accepted:
+
+  	| property | type | example | obligation | 
+  	| :---:  | :---: | :---: | :---: |
+ 	| `cpf`  | `number` | 12345678910 | must be a valid cpf | 
+ 	| `cpf`  | `string` | '123.456.789-10' | must be a valid cpf | 
+ 	| `cpf`  | `string` | '12345678910' | must be a valid cpf | 
+
+
+  - response:
+	```json
+		{
+			"id": 0,
+			"name": "yourname",
+			"cpf": "XXXXXXXXXDD",
+			"birthday": "YYYY-MM-DDTHH:mm:ss",
+		}
+	``` 
+
+	
+
+- **GET** `/users` - Get all users, limit 5 users by page
+  
+    | Query Params | type | value | Description | 
+  	| :---:  | :---: | :---: | :---: |
+	| none  | none | null | first page | 
+	| `page`  | `number` | 0 |first page | 
+	| `page`  | `number` | 1 | first page | 
+ 	| `page`  | `number` | > 1 | pagination | 
+	
+  - headers: default 
+  - body: none
+  - response:
+	```json
+	[
+		{
+			"id": 0,
+			"name": "yourname",
+			"cpf": "XXXXXXXXXDD",
+			"birthday": "YYYY-MM-DDTHH:mm:ss",
+		}
+	]
+	```
+
+
+- **GET** `/users/:cpf` - Get user by cpf
+  
+  - headers: default 
+  - body: none
+  - response:
+	```json
+	{
+		"id": 0,
+		"name": "yourname",
+		"cpf": "XXXXXXXXXDD",
+		"birthday": "YYYY-MM-DDTHH:mm:ss",
+	}
+	```
+- **GET** `/health` - Get API health
+    - headers: 
+    - body: none
+    - response: `OK`
+
+## 💽 Database
+
+This project uses a [PostgreSQL](https://www.postgresql.org/) database.
+- **Database name:** `igmadb`
+- **`Tables`:**
+  - **`users`:** Stores all users
