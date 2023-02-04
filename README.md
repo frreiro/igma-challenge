@@ -118,9 +118,9 @@ $ yarn run docker:up:test
 
   	| property | type | example | obligation | 
   	| :---:  | :---: | :---: | :---: |
- 	| `cpf`  | `number` | 12345678910 | must be a valid cpf | 
- 	| `cpf`  | `string` | '123.456.789-10' | must be a valid cpf | 
- 	| `cpf`  | `string` | '12345678910' | must be a valid cpf | 
+ 	| `cpf`  | `number` | 12345678910 | [must be a valid cpf](CPFVALIDATE.md) | 
+ 	| `cpf`  | `string` | '123.456.789-10' | [must be a valid cpf](CPFVALIDATE.md) | 
+ 	| `cpf`  | `string` | '12345678910' | [must be a valid cpf](CPFVALIDATE.md) | 
 
 
   - response:
