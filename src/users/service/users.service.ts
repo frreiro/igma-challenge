@@ -18,6 +18,13 @@ export class UsersService {
     const date = new Date(createUserDto.birthday);
     const cpf = new CPF(createUserDto.cpf);
 
+    if (Date.now() - date.getTime() < 0) {
+      throw new HttpException(
+        'Date must be valid',
+        HttpStatus.UNPROCESSABLE_ENTITY
+      );
+    }
+
     if (!cpf.isValid()) {
       throw new HttpException(
         'CPF must be valid',
