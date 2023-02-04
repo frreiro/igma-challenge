@@ -27,6 +27,17 @@ Each user has the following data structure.
 - [Docker Compose](https://docs.docker.com/compose/)
 - [Prisma ORM](https://www.prisma.io/)
 - [PostgreSQL](https://www.postgresql.org/)
+- [Render](https://render.com/)
+
+
+## 🚀 Deploy
+
+This project is deployed on [Render](https://render.com/) clound, and can be connected and tested using the following link: 
+`https://igma-challenge.onrender.com`
+
+
+In case you want to install and test the application locally follow the next steps
+
 
 ## 📦 Installation
 
